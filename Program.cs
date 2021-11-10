@@ -1,33 +1,34 @@
 ﻿using System;
 
-class Circle
+
+namespace Properties
 {
-    static float PI;
-    int _radius;
-
-    static Circle()
+    class Employee
     {
-        PI = 3.14f;
+        int _eno;
+        public int Eno
+        {
+            get { return _eno; }
+            set { _eno = value; }
+        }
+
+        string _ename;
+        public string Ename
+        {
+            get { return _ename; }
+            set { _ename = value; }
+        }
     }
-
-    public Circle(int radius)
+    class Program
     {
-        _radius = radius;
-    }
+        static void Main(string[] args)
+        {
+            Employee employee = new Employee();
+            employee.Eno = 1001;
+            employee.Ename = "Ashok";
 
-    public double Area()
-    {
-        return PI * _radius * _radius;
+            Console.WriteLine("{0} \t {1}", employee.Eno, employee.Ename);
+        }
     }
 }
-class Program
-{
-    static void Main()
-    {
-        Circle c1 = new Circle(5);
-        Console.WriteLine("Area is : {0}", c1.Area());
-
-        Circle c2 = new Circle(6);
-        Console.WriteLine("Area is : {0}", c2.Area());
-    }
-}
+ 
